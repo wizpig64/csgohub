@@ -59,17 +59,18 @@
         <div class="col-sm-4">
           <p>CS:GO Squad</p>
           <!-- CSGOSQUAD.COM -->
-          <!-- These are actually the same form but I like this layout better -->
+          <!-- Searching for matches from here doesn't seem to work. We'll just do it ourselves in JS. -->
           <p>
-            <form action="https://csgosquad.com/search">
+            <form action="">
               <div class="input-group">
-                <input class="form-control" type="text" name="q" placeholder="steam://rungame/730/###/+csgo_download_match%CSGO-4X18i-vdjCj-xd420-y43v4-8pF4C"/>
+                <input id="csgosquad-match-input" class="form-control" type="text" name="q" placeholder="steam://rungame/730/###/+csgo_download_match%CSGO-4X18i-vdjCj-xd420-y43v4-8pF4C"/>
                 <span class="input-group-btn">
                   <button class="btn btn-warning" type="submit">Demo</button>
                 </span>
               </div>
             </form>
           </p>
+          <!-- This works just fine for users though! -->
           <p>
             <form action="https://csgosquad.com/search">
               <div class="input-group">
@@ -123,6 +124,13 @@
         } else {
           $('.feed-me-hash').val(hash)
         }
+        // Fix for csgosquad match search - do it ourselves
+        var match_re = /CSGO(?:-[A-Za-z0-9]{5}){5}/
+        function csgosquad_match() {
+          var match = $('#csgosquad-match-input').val().match(match_re)
+          window.location.href = 'https://csgosquad.com/match/' + match
+        }
+        $('#csgosquad-match-input').closest('form').submit(csgosquad_match)
       })
     </script>
   </body>
