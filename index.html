@@ -14,9 +14,116 @@
   </head>
   <body>
     <div class="container">
+      <div class="page-header">
+        <h1><a href="https://github.com/wizpig64/csgohub">CS:GO Hub</a></h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <p>Standard searches</p>
+          <!-- GOOGLE -->
+          <p>
+            <form action="https://www.google.com/search">
+              <div class="input-group">
+                <input type="search" class="form-control" name="q" placeholder="Search" autofocus>
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary">Google</button>
+                </span>
+              </div>
+            </form>
+          </p>
+          <!-- YOUTUBE -->
+          <p>
+            <form action="https://www.youtube.com/results">
+              <div class="input-group">
+                <input type="search" class="form-control" name="search_query" placeholder="Search">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-danger">YouTube</button>
+                </span>
+              </div>
+            </form>
+          </p>
+          <!-- WIKIPEDIA EN -->
+          <p>
+            <form action="https://www.wikipedia.org/search-redirect.php">
+              <input type="hidden" name="family" value="wikipedia">
+              <input type="hidden" name="language" value="en">
+              <div class="input-group">
+                <input type="search" class="form-control" name="search" placeholder="Search">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-default">Wikipedia</button>
+                </span>
+              </div>
+            </form>
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <p>CS:GO Squad</p>
+          <!-- CSGOSQUAD.COM -->
+          <!-- These are actually the same form but I like this layout better -->
+          <p>
+            <form action="https://csgosquad.com/search">
+              <div class="input-group">
+                <input class="form-control" type="text" name="q" placeholder="steam://rungame/730/###/+csgo_download_match%CSGO-4X18i-vdjCj-xd420-y43v4-8pF4C"/>
+                <span class="input-group-btn">
+                  <button class="btn btn-warning" type="submit">Demo</button>
+                </span>
+              </div>
+            </form>
+          </p>
+          <p>
+            <form action="https://csgosquad.com/search">
+              <div class="input-group">
+                <input class="form-control feed-me-hash" name="q" placeholder="username, STEAM_0:0:4164558, 76561179974618429" type="text">
+                <span class="input-group-btn">
+                  <button class="btn btn-success" type="submit">Player</button>
+                </span>
+              </div>
+            </form>
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <p>csgostats.gg</p>
+          <!-- CSGOSTATS.GG -->
+          <p>
+            <form method="post" action="https://csgostats.gg/match/upload">
+              <div class="input-group">
+                <input class="form-control" name="sharecode" placeholder="steam://rungame/730/###/+csgo_download_match%CSGO-4X18i-vdjCj-xd420-y43v4-8pF4C"/>
+                <span class="input-group-btn">
+                  <button class="btn btn-warning" type="submit">Demo</button>
+                </span>
+              </div>
+            </form>
+          </p>
+          <p>
+            <form method="post" action="https://csgostats.gg/player">
+              <div class="input-group">
+                <input class="form-control feed-me-hash" name="steam_id" placeholder="username, STEAM_0:0:4164558, 76561179974618429" type="text">
+                <span class="input-group-btn">
+                  <button class="btn btn-success" type="submit">Player</button>
+                </span>
+              </div>
+            </form>
+          </p>
+        </div>
+      </div>
+      <div class="alert alert-info nohash" role="alert" style="display: none;">
+        <strong>Pro tips!</strong>
+        Add your username or Steam ID to the url to automatically fill in some fields. Like so: http://link/to/this/page/#potatoman
+      </div>
     </div>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(function() {
+        // Automatically fill in some inputs when given a # in the url.
+        var hash = window.location.hash.substring(1)
+        if (hash == "") {
+          $('.nohash').show()
+        } else {
+          $('.feed-me-hash').val(hash)
+        }
+      })
+    </script>
   </body>
 </html>
