@@ -1,7 +1,7 @@
 # csgohub
 
-You can make this your homepage for steam and have easy access to stuff while playing csgo.
+A homepage meant for steam's in-game browser, for making things easier to access while playing cs:go.
 
 Check it out: [https://wizpig64.github.io/csgohub/](https://wizpig64.github.io/csgohub/)
 
-Optionally add your username: [https://wizpig64.github.io/csgohub/#wizpig64](https://wizpig64.github.io/csgohub/#wizpig64)
+Optionally add your username to fill in some user-related searches: [https://wizpig64.github.io/csgohub/#potatoman](https://wizpig64.github.io/csgohub/#potatoman)
