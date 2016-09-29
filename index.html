@@ -129,6 +129,7 @@
         function csgosquad_match() {
           var match = $('#csgosquad-match-input').val().match(match_re)
           window.location.href = 'https://csgosquad.com/match/' + match
+          return false
         }
         $('#csgosquad-match-input').closest('form').submit(csgosquad_match)
       })
